@@ -3,6 +3,15 @@ import pandas as pd
 import skfuzzy as fuzz
 from skfuzzy import control as ctrl
 
+# Función para normalizar remate (shotType)
+def normalizar_remate(val):
+    if val in [1, 2]:
+        return 1  # pie
+    elif val == 3:
+        return 3  # cabeza
+    else:
+        return 4  # otro
+
 # Función para calcular factor de certidumbre según heurísticas
 def calcular_cf(row):
     cf = 1.0
@@ -11,9 +20,9 @@ def calcular_cf(row):
     elif row['distancia'] > 0.7:
         cf *= 0.8
 
-    if row['shotType'] == 3:
+    if row['remate'] == 3:
         cf *= 0.7
-    elif row['shotType'] >= 4:
+    elif row['remate'] == 4:
         cf *= 0.5
     else:
         cf *= 0.9
@@ -68,6 +77,12 @@ def calcular_xg_difuso(df):
     df = df.copy()
     df['distancia'] = calcular_distancia(df['X'], df['Y'])
     df['angulo'] = calcular_angulo(df['X'], df['Y'])
+    df['remate'] = df['shotType'].apply(normalizar_remate)
+
+    # Limitar valores al rango del sistema difuso para evitar NaNs
+    df['distancia'] = df['distancia'].clip(0, 1.1)
+    df['angulo'] = df['angulo'].clip(0, 0.6)
+
     df['cf'] = df.apply(calcular_cf, axis=1)
 
     resultados = []
@@ -76,7 +91,7 @@ def calcular_xg_difuso(df):
         sistema = crear_sistema_difuso()  # Reinicia el sistema para cada fila
         sistema.input['distancia'] = fila['distancia']
         sistema.input['angulo'] = fila['angulo']
-        sistema.input['remate'] = fila['shotType']
+        sistema.input['remate'] = fila['remate']
 
         try:
             sistema.compute()
@@ -93,6 +108,7 @@ def calcular_xg_difuso(df):
             'distancia': round(fila['distancia'], 3),
             'angulo': round(fila['angulo'], 3),
             'shotType': fila['shotType'],
+            'remate': fila['remate'],
             'cf': fila['cf'],
             'xG_difuso': round(xg_difuso, 4) if xg_difuso is not None else None,
             'xG_ajustado': xg_ajustado,
