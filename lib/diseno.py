@@ -695,6 +695,24 @@ def print_letra(letra, x, y, color1, color2, color3):
         gotoxy(x+3,y+4)
         print("▀")
         salto = 5
+    elif (letra == '5'):
+        customForeground(color1[0], color1[1], color1[2])
+        print("█▀▀▀▀")
+        customBackground(color2[0], color2[1], color2[2])
+        gotoxy(x, y+1)
+        print("▀")
+        colorForeground("negro")
+        gotoxy(x+1, y+1)
+        print("▀▀▀")
+        gotoxy(x+4, y+2)
+        print(" ")
+        customForeground(color3[0], color3[1], color3[2])
+        colorBackground("negro")
+        gotoxy(x,y+3)
+        print("▄   █")
+        gotoxy(x+1,y+4)
+        print("▀▀▀")
+        salto = 6
 
     colorDefault()
     return salto
