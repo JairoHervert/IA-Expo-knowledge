@@ -52,23 +52,36 @@ def titulo_llenado_ranuras(color1, color2, color3):
     posX += print_letra('A', posX, posY, color1, color2, color3)
     posX += print_letra('S', posX, posY, color1, color2, color3)
 
-def titulo_DFS():
-    print_letra('D', 13, 2, (254, 244, 255), (157, 151, 158), (158, 0, 13))
-    print_letra('E', 19, 2, (254, 244, 255), (157, 151, 158), (158, 0, 13))
-    print_letra('P', 24, 2, (254, 244, 255), (157, 151, 158), (158, 0, 13))
-    print_letra('T', 29, 2, (254, 244, 255), (157, 151, 158), (158, 0, 13))
-    print_letra('H', 36, 2, (254, 244, 255), (157, 151, 158), (158, 0, 13))
-    print_letra('F', 46, 2, (254, 244, 255), (157, 151, 158), (158, 0, 13))
-    print_letra('I', 51, 2, (254, 244, 255), (157, 151, 158), (158, 0, 13))
-    print_letra('R', 57, 2, (254, 244, 255), (157, 151, 158), (158, 0, 13))
-    print_letra('S', 62, 2, (254, 244, 255), (157, 151, 158), (158, 0, 13))
-    print_letra('T', 67, 2, (254, 244, 255), (157, 151, 158), (158, 0, 13))
-    print_letra('S', 77, 2, (254, 244, 255), (157, 151, 158), (158, 0, 13))
-    print_letra('E', 82, 2, (254, 244, 255), (157, 151, 158), (158, 0, 13))
-    print_letra('A', 87, 2, (254, 244, 255), (157, 151, 158), (158, 0, 13))
-    print_letra('R', 93, 2, (254, 244, 255), (157, 151, 158), (158, 0, 13))
-    print_letra('C', 98, 2, (254, 244, 255), (157, 151, 158), (158, 0, 13))
-    print_letra('H', 103, 2, (254, 244, 255), (157, 151, 158), (158, 0, 13))
+def titulo_logica_1er_orden(color1, color2, color3):
+    posX = 28
+    posY = 2
+    posX += print_letra('3', posX, posY, color1, color2, color3)
+    posX += print_letra('.', posX, posY, color1, color2, color3)
+    posX += print_letra('2', posX, posY, color1, color2, color3)
+    posX += 4
+    posX += print_letra('L', posX, posY, color1, color2, color3)
+    posX += print_letra('Ó', posX, posY, color1, color2, color3)
+    posX += print_letra('G', posX, posY, color1, color2, color3)
+    posX += print_letra('I', posX, posY, color1, color2, color3)
+    posX += print_letra('C', posX, posY, color1, color2, color3)
+    posX += print_letra('A', posX, posY, color1, color2, color3)
+    posX += 4
+    posX += print_letra('D', posX, posY, color1, color2, color3)
+    posX += print_letra('E', posX, posY, color1, color2, color3)
+    posX = 28
+    posY = 7
+    posX += print_letra('P', posX, posY, color1, color2, color3)
+    posX += print_letra('R', posX, posY, color1, color2, color3)
+    posX += print_letra('I', posX, posY, color1, color2, color3)
+    posX += print_letra('M', posX, posY, color1, color2, color3)
+    posX += print_letra('E', posX, posY, color1, color2, color3)
+    posX += print_letra('R', posX, posY, color1, color2, color3)
+    posX += 4
+    posX += print_letra('O', posX, posY, color1, color2, color3)
+    posX += print_letra('R', posX, posY, color1, color2, color3)
+    posX += print_letra('D', posX, posY, color1, color2, color3)
+    posX += print_letra('E', posX, posY, color1, color2, color3)
+    posX += print_letra('N', posX, posY, color1, color2, color3)
 
 def titulo_greedy():
     print_letra('A', 15, 2, (255, 178, 0), (124, 178, 0), (20, 178, 0))
@@ -86,19 +99,6 @@ def titulo_greedy():
     print_letra('E', 89, 2, (255, 178, 0), (124, 178, 0), (20, 178, 0))
     print_letra('D', 94, 2, (255, 178, 0), (124, 178, 0), (20, 178, 0))
     print_letra('Y', 100, 2, (255, 178, 0), (124, 178, 0), (20, 178, 0))
-
-def titulo_A():
-    print_letra('A', 26, 2, (198, 0, 139), (0, 178, 211), (255, 236, 236))
-    print_letra('L', 32, 2, (198, 0, 139), (0, 178, 211), (255, 236, 236))
-    print_letra('G', 37, 2, (198, 0, 139), (0, 178, 211), (255, 236, 236))
-    print_letra('O', 43, 2, (198, 0, 139), (0, 178, 211), (255, 236, 236))
-    print_letra('R', 49, 2, (198, 0, 139), (0, 178, 211), (255, 236, 236))
-    print_letra('I', 54, 2, (198, 0, 139), (0, 178, 211), (255, 236, 236))
-    print_letra('T', 60, 2, (198, 0, 139), (0, 178, 211), (255, 236, 236))
-    print_letra('M', 66, 2, (198, 0, 139), (0, 178, 211), (255, 236, 236))
-    print_letra('O', 74, 2, (198, 0, 139), (0, 178, 211), (255, 236, 236))
-    print_letra('A', 84, 2, (198, 0, 139), (0, 178, 211), (255, 236, 236))
-    print_letra('*', 90, 2, (198, 0, 139), (0, 178, 211), (255, 236, 236))
 
 def titulo_hill_climbing():
     print_letra('H', 24, 2, (250, 250, 250), (47, 72, 165), (135, 79, 44))

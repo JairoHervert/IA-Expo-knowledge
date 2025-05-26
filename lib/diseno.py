@@ -226,7 +226,7 @@ def print_letra(letra, x, y, color1, color2, color3):
         print("█   █")
         gotoxy(x+1,y+4)
         print("▀▀▀")
-        
+        salto = 6
     elif (letra == 'H'):
         customForeground(color1[0], color1[1], color1[2])
         print("█   █")
@@ -377,6 +377,22 @@ def print_letra(letra, x, y, color1, color2, color3):
         gotoxy(x+1,y+4)
         print("▀▀▀")
         salto = 6
+    elif (letra == 'Ó'):
+        customForeground(color1[0], color1[1], color1[2])
+        print("  ▄▀")
+        customForeground(color2[0], color2[1], color2[2])
+        gotoxy(x+1,y+1)
+        print("▄▄▄")
+        gotoxy(x,y+2)
+        print("█   █")
+        customForeground(color3[0], color3[1], color3[2])
+        gotoxy(x,y+3)
+        print("█")
+        gotoxy(x+4,y+3)
+        print("█")
+        gotoxy(x+1,y+4)
+        print("▀▀▀")
+        salto = 6
     elif (letra == 'P'):
         customForeground(color1[0], color1[1], color1[2])
         print("█▀▀▄")
@@ -396,7 +412,7 @@ def print_letra(letra, x, y, color1, color2, color3):
         print("█")
         gotoxy(x,y+4)
         print("▀")
-        
+        salto = 5
     elif (letra == 'Q'):
         customForeground(color1[0], color1[1], color1[2])
         print("▄▀▀▀▄")
@@ -608,11 +624,9 @@ def print_letra(letra, x, y, color1, color2, color3):
 
     elif (letra == '.'):
         customForeground(color3[0], color3[1], color3[2])
-        gotoxy(x, y+3)
-        print("▄▄")
         gotoxy(x,y+4)
-        print("▀▀")
-        salto = 3
+        print("▀")
+        salto = 2
 
     elif (letra == '1'):
         customForeground(color1[0], color1[1], color1[2])
@@ -629,6 +643,22 @@ def print_letra(letra, x, y, color1, color2, color3):
         print("█")
         gotoxy(x,y+4)
         colorBackground("negro")
+        print("▀▀▀▀▀")
+        salto = 6
+    elif (letra == '2'):
+        customForeground(color1[0], color1[1], color1[2])
+        print("▄▀▀▀▄")
+        customBackground(color2[0], color2[1], color2[2])
+        gotoxy(x+4, y+1)
+        print("▀")
+        colorForeground("negro")
+        gotoxy(x+2, y+2)
+        print("▀▄")
+        customForeground(color3[0], color3[1], color3[2])
+        colorBackground("negro")
+        gotoxy(x,y+3)
+        print("▄▀")
+        gotoxy(x,y+4)
         print("▀▀▀▀▀")
         salto = 6
     elif (letra == '3'):
