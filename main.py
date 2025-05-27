@@ -6,10 +6,11 @@ from colorama import init, Fore, Back, Style
 
 from lib.consola import gotoxy, enable_ansi_escape, clrscr
 from lib.diseno import print_letra, colorDefault, customForeground
-from lib.menus import menu_principal, titulo_logica_1er_orden, titulo_llenado_ranuras, titulo_conocimiento_incierto_incompleto
+from lib.menus import menu_principal, titulo_logica_1er_orden, titulo_razonamiento_reglas, titulo_llenado_ranuras, titulo_conocimiento_incierto_incompleto
 
-from src.llenado_de_ranuras import semantic_network_animals, frames_medical_diagnostics, conceptual_dependency, script_pacient_cares
 from src.logica_1er_orden import batalla_estrategica
+from src.basado_en_reglas import analisis_PC
+from src.llenado_de_ranuras import semantic_network_animals, frames_medical_diagnostics, conceptual_dependency, script_pacient_cares
 from src.conocimiento_incierto import xg_difuso
 
 def menu_3_2():
@@ -20,12 +21,27 @@ def menu_3_2():
     customForeground(255,135,191)
     input("\n   Presiona ENTER para continuar...\033[0m\n\n\n")
 
+def menu_3_3():
+    opcion = 0
+    while(opcion != 2):
+        clrscr()
+        titulo_razonamiento_reglas((250, 250, 250), (47, 72, 165), (135, 79, 44))
+        print("\n   Seleccionar un programa.\n")
+        print("  1.- Análisis PC (Encadenamiento hacia adelante)")
+        print("  2.- Regresar")
+        opcion = int(input("\n   Seleccione la opción deseada: "))
+        if(opcion == 1):
+            analisis_PC()
+            #opcion = int(input("\n   Seleccione la opción deseada: "))
+            #customForeground(255,135,191)
+            #input("\n   Presiona ENTER para continuar...\033[0m\n\n\n")
+
 def menu_3_4():
     opcion = 0
     while(opcion != 5):
         clrscr()
         titulo_llenado_ranuras((255, 198, 64), (255, 146, 64), (189, 15, 17))
-        print("\n   Seleccionar un tema.\n")
+        print("\n   Seleccionar un programa.\n")
         print("  1.- Red semántica de animales")
         print("  2.- Marco de diagnóstico médico")
         print("  3.- Dependencia conceptual de oraciones")
@@ -78,7 +94,7 @@ def main():
         if(opcion == 1):
             menu_3_2()
         elif(opcion == 2):
-            print("¿")
+            menu_3_3()
         elif(opcion == 3):
             menu_3_4()
         elif(opcion == 4):

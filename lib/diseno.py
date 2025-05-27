@@ -140,7 +140,7 @@ def print_letra(letra, x, y, color1, color2, color3):
         print("█  █")
         gotoxy(x, y+4)
         print("▀▀▀")
-        
+        salto = 5
     elif (letra == 'C'):
         customForeground(color1[0], color1[1], color1[2])
         print("▄▀▀▀")
@@ -208,7 +208,7 @@ def print_letra(letra, x, y, color1, color2, color3):
         print("█")
         gotoxy(x,y+4)
         print("▀")
-        
+        salto = 5
     elif (letra == 'G'):
         customForeground(color1[0], color1[1], color1[2])
         print("▄▀▀▀▄")
@@ -244,7 +244,7 @@ def print_letra(letra, x, y, color1, color2, color3):
         print("█   █")
         gotoxy(x,y+4)
         print("▀   ▀")
-        
+        salto = 5
     elif (letra == 'I'):
         customForeground(color1[0], color1[1], color1[2])
         print("▀▀█▀▀")
@@ -259,7 +259,6 @@ def print_letra(letra, x, y, color1, color2, color3):
         print("█")
         gotoxy(x,y+4)
         print("▀▀▀▀▀")
-        
         salto = 6
     elif (letra == 'J'):
         customForeground(color1[0], color1[1], color1[2])
@@ -275,7 +274,7 @@ def print_letra(letra, x, y, color1, color2, color3):
         print("█  █")
         gotoxy(x,y+4)
         print(" ▀▀")
-        
+        salto = 5
     elif (letra == 'K'):
         customForeground(color1[0], color1[1], color1[2])
         print("█  █")
@@ -597,7 +596,7 @@ def print_letra(letra, x, y, color1, color2, color3):
         print("█")
         gotoxy(x,y+4)
         print("▀▀▀▀▀")
-
+        salto = 6
     elif (letra == '*'):
         customForeground(color1[0], color1[1], color1[2])
         print("▀▄█▄▀")
