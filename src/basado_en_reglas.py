@@ -55,7 +55,6 @@ reglas = [
     # Problemas de energía y encendido
     {"si": {"No enciende", "Tiene problemas con la fuente de energía"}, "entonces": "Requiere cambio de fuente"},
     {"si": {"No enciende", "No hace sonidos al encender"}, "entonces": "Posible problema en la tarjeta madre"},
-    {"si": {"No enciende", "La PC emite pitidos al iniciar"}, "entonces": "Tiene problemas de RAM"},
     {"si": {"No enciende", "Tiene virus"}, "entonces": "Requiere revisión especializada"},
     # Problemas de almacenamiento y disco duro
     {"si": {"Tiene un problema de espacio", "Tiene virus"}, "entonces": "Requiere antivirus"},
@@ -68,7 +67,7 @@ reglas = [
     {"si": {"Tiene problemas de RAM", "El sistema está lento"}, "entonces": "Requiere aumento de RAM"},
     {"si": {"Tiene problemas de RAM", "El sistema se reinicia continuamente"}, "entonces": "Requiere cambio o limpieza de RAM"},
     {"si": {"El sistema se congela", "Tiene problemas de RAM"}, "entonces": "Posible daño en módulos de RAM"},
-    {"si": {"La PC emite pitidos al iniciar"}, "entonces": "Revisar conexión o estado de RAM"},
+    {"si": {"La PC emite pitidos al iniciar"}, "entonces": "Tiene problemas de RAM"},
     # Problemas fuertes
     {"si": {"Tiene problemas en el procesador"}, "entonces": "Requiere revisión especializada"},
     {"si": {"Tiene problemas en la tarjeta madre"}, "entonces": "Requiere revisión especializada"},
@@ -129,7 +128,7 @@ def analisis_PC():
         for hecho in hechos_derivados:
             print(f" - {hecho}")
         
-        opcion = input("Introduzca un número o escriba \"salir\" para terminar con el programa: ")
+        opcion = input("\nIntroduzca un número o escriba \"salir\" para terminar con el programa: ")
         if(opcion == "salir"):
             break
         elif opcion.isdigit():
